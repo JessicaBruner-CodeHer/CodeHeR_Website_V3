@@ -26,7 +26,7 @@ const Home = () => {
         <TrustStrip />
         <Services />
         <About />
-        <ProjectCta openModal={openModal} />
+        <ProjectCta onQuoteClick={openModal} />
       </main>
 
       <Modal isOpen={isOpen} onClose={closeModal}>

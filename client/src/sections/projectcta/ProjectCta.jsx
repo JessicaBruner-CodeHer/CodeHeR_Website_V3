@@ -2,7 +2,7 @@ import Button from "@/ui/button/Button";
 import siteConfig from "@/assets/constants/siteConfig";
 import "./projectcta.css";
 
-const ProjectCta = ({ openModal }) => {
+const ProjectCta = ({ onQuoteClick }) => {
   return (
     <section className="project-cta">
       <div className="site-container">
@@ -25,7 +25,7 @@ const ProjectCta = ({ openModal }) => {
             <Button
               variant="primary"
               label={siteConfig.navigation.ctaLabel}
-              onClick={openModal}
+              onClick={onQuoteClick}
             />
           </div>
         </div>
