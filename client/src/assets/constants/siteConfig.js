@@ -68,7 +68,7 @@ const siteConfig = {
 
   api: {
     baseUrl: "/api",
-    quoteEndpoint: "/quote"
+    quoteEndpoint: "/quotes"
   }
 };
 

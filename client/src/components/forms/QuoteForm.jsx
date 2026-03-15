@@ -1,12 +1,13 @@
 import { useState } from "react";
 import Button from "../../../ui/button/Button";
+import siteConfig from "../../../assets/constants/siteConfig";
 import "./quoteform.css";
 
 const QuoteForm = () => {
   const [formData, setFormData] = useState({
     name: "",
     email: "",
-    company: "",
+    organization: "",
     projectType: "",
     message: ""
   });
@@ -14,31 +15,56 @@ const QuoteForm = () => {
   const handleChange = (event) => {
     const { name, value } = event.target;
 
-    setFormData((prev) => ({
-      ...prev,
+    setFormData((previousState) => ({
+      ...previousState,
       [name]: value
     }));
   };
 
-  const handleSubmit = (event) => {
+  const handleSubmit = async (event) => {
     event.preventDefault();
 
-    console.log("Quote Request Submitted", formData);
+    try {
+      const response = await fetch(
+        `${siteConfig.api.baseUrl}${siteConfig.api.quoteEndpoint}`,
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json"
+          },
+          body: JSON.stringify(formData)
+        }
+      );
 
-    // later this will call the Express API
+      const result = await response.json();
+
+      if (!response.ok) {
+        throw new Error(result.message || "Submission failed");
+      }
+
+      console.log("Quote submitted:", result);
+
+      setFormData({
+        name: "",
+        email: "",
+        organization: "",
+        projectType: "",
+        message: ""
+      });
+    } catch (error) {
+      console.error("Quote submit error:", error);
+    }
   };
 
   return (
     <form className="quote-form" onSubmit={handleSubmit}>
-      <h2 className="quote-form-title">
-        Request a Quote
-      </h2>
+      <h2 className="quote-form-title">Request a Quote</h2>
 
       <div className="quote-form-grid">
-
         <div className="form-field">
-          <label>Name</label>
+          <label htmlFor="name">Name</label>
           <input
+            id="name"
             type="text"
             name="name"
             required
@@ -48,8 +74,9 @@ const QuoteForm = () => {
         </div>
 
         <div className="form-field">
-          <label>Email</label>
+          <label htmlFor="email">Email</label>
           <input
+            id="email"
             type="email"
             name="email"
             required
@@ -59,19 +86,22 @@ const QuoteForm = () => {
         </div>
 
         <div className="form-field">
-          <label>Company</label>
+          <label htmlFor="organization">Organization</label>
           <input
+            id="organization"
             type="text"
-            name="company"
-            value={formData.company}
+            name="organization"
+            value={formData.organization}
             onChange={handleChange}
           />
         </div>
 
         <div className="form-field">
-          <label>Project Type</label>
+          <label htmlFor="projectType">Project Type</label>
           <select
+            id="projectType"
             name="projectType"
+            required
             value={formData.projectType}
             onChange={handleChange}
           >
@@ -83,27 +113,23 @@ const QuoteForm = () => {
             <option value="support">Technical Support</option>
           </select>
         </div>
-
       </div>
 
       <div className="form-field form-message">
-        <label>Project Details</label>
+        <label htmlFor="message">Project Details</label>
         <textarea
+          id="message"
           name="message"
           rows="4"
+          required
           value={formData.message}
           onChange={handleChange}
         />
       </div>
 
       <div className="quote-form-actions">
-        <Button
-          type="submit"
-          variant="primary"
-          label="Submit Request"
-        />
+        <Button type="submit" variant="primary" label="Submit Request" />
       </div>
-
     </form>
   );
 };
