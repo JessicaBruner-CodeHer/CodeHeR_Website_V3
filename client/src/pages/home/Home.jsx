@@ -1,4 +1,4 @@
-import useModal from "@/hooks/useModal";
+import { useModal } from "@/hooks/useModal";
 
 import Navbar from "@/layout/navbar/Navbar";
 import Footer from "@/layout/footer/Footer";
@@ -13,28 +13,27 @@ import QuoteForm from "@/components/forms/quoteform/QuoteForm";
 
 import "./home.css";
 
-
-const Home = () => {
+function Home() {
   const { isOpen, openModal, closeModal } = useModal();
 
   return (
     <>
-      <Navbar onQuoteClick={openModal} />
+      <Navbar openModal={openModal} />
 
-      <main className="home-main">
-        <Hero onQuoteClick={openModal} />
-        <TrustStrip />
-        <Services />
-        <About />
-      </main>
+      <Hero openModal={openModal} />
+      <TrustStrip />
+      <Services openModal={openModal} />
+      <About />
 
-      <Modal isOpen={isOpen} onClose={closeModal}>
-        <QuoteForm />
+          <Modal isOpen={isOpen} onClose={closeModal}>
+        <QuoteForm closeModal={closeModal} />
       </Modal>
 
-      <Footer onQuoteClick={openModal} />
+      <Footer openModal={openModal} />
+
+  
     </>
   );
-};
+}
 
 export default Home;
