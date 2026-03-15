@@ -8,7 +8,7 @@ import TrustStrip from "../../sections/truststrip/TrustStrip";
 import Services from "../../sections/services/Services";
 import About from "../../sections/about/About";
 
-import Modal from "../../ui/modal/Modal";
+import Modal from "../../ui/modal/Model";
 import QuoteForm from "../../components/forms/quoteform/QuoteForm";
 
 import "./home.css";
