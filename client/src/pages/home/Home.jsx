@@ -1,4 +1,5 @@
-import { useModal } from "../../hooks/useModal";
+import useModal from "../../hooks/useModal";
+
 
 import Navbar from "../../layout/navbar/Navbar";
 import Footer from "../../layout/footer/Footer";
