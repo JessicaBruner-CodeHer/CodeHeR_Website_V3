@@ -1,5 +1,6 @@
 import Quote from "../models/Quote.js";
 import { Resend } from "resend";
+import env from "../config/env.js";
 
 export const createQuote = async (req, res) => {
   try {
@@ -20,9 +21,9 @@ export const createQuote = async (req, res) => {
       message
     });
 
-    if (process.env.RESEND_API_KEY) {
+    if (env.resendApiKey) {
       try {
-        const resend = new Resend(process.env.RESEND_API_KEY);
+        const resend = new Resend(env.resendApiKey);
 
         await resend.emails.send({
           from: "CodeHeR <onboarding@resend.dev>",
