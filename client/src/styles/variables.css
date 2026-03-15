@@ -1,0 +1,69 @@
+/* ===============================
+   DESIGN SYSTEM VARIABLES
+================================ */
+
+:root {
+
+  /* Colors */
+
+  --color-primary: #2563eb;
+  --color-secondary: #7c3aed;
+
+  --gradient-primary: linear-gradient(
+    135deg,
+    #2563eb 0%,
+    #7c3aed 100%
+  );
+
+  --color-text-main: #1f2937;
+  --color-text-muted: #6b7280;
+
+  --color-background-main: #ffffff;
+  --color-background-soft: #f9fafb;
+
+  --color-border-light: #e5e7eb;
+
+  /* Layout */
+
+  --site-max-width: 1200px;
+
+  /* Spacing scale */
+
+  --space-xs: 6px;
+  --space-sm: 12px;
+  --space-md: 20px;
+  --space-lg: 40px;
+  --space-xl: 80px;
+
+  /* Radius */
+
+  --radius-sm: 6px;
+  --radius-md: 12px;
+  --radius-lg: 20px;
+
+  /* Shadows */
+
+  --shadow-soft: 0 10px 25px rgba(0,0,0,0.05);
+  --shadow-medium: 0 15px 40px rgba(0,0,0,0.08);
+
+  /* Typography */
+
+  --font-main: system-ui, -apple-system, BlinkMacSystemFont,
+    "Segoe UI", Roboto, Ubuntu, sans-serif;
+
+  --font-size-sm: 0.9rem;
+  --font-size-md: 1rem;
+  --font-size-lg: 1.25rem;
+  --font-size-xl: 2rem;
+  --font-size-hero: 3rem;
+
+  /* Transitions */
+
+  --transition-fast: 0.15s ease;
+  --transition-standard: 0.25s ease;
+
+  /* Z-index */
+
+  --z-navbar: 1000;
+  --z-modal: 2000;
+}
