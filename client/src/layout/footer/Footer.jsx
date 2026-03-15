@@ -1,16 +1,13 @@
 import navLinks from "@/assets/constants/navLinks";
 import siteConfig from "@/assets/constants/siteConfig";
-import Button from "@/ui/button/Button";
 import "./footer.css";
 
-
-const Footer = ({ onQuoteClick }) => {
+const Footer = () => {
   const year = new Date().getFullYear();
 
   return (
     <footer className="footer">
       <div className="site-container footer-inner">
-
         <div className="footer-brand">
           <div className="footer-logo">
             {siteConfig.brand.name}
@@ -37,22 +34,19 @@ const Footer = ({ onQuoteClick }) => {
           </ul>
         </div>
 
-        <div className="footer-cta">
+        <div className="footer-meta">
           <h4 className="footer-heading">
-            Start a Project
+            Contact
           </h4>
 
-          <p className="footer-cta-text">
-            Request a quote to begin planning your website project.
+          <p className="footer-meta-text">
+            {siteConfig.business.email}
           </p>
 
-          <Button
-            variant="primary"
-            label={siteConfig.navigation.ctaLabel}
-            onClick={onQuoteClick}
-          />
+          <p className="footer-meta-text">
+            {siteConfig.business.location}
+          </p>
         </div>
-
       </div>
 
       <div className="footer-bottom">

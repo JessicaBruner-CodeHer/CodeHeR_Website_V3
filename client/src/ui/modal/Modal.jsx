@@ -1,8 +1,8 @@
 import { useEffect } from "react";
+import { createPortal } from "react-dom";
 import "./modal.css";
 
 const Modal = ({ isOpen, onClose, children }) => {
-
   useEffect(() => {
     if (!isOpen) return;
 
@@ -21,9 +21,7 @@ const Modal = ({ isOpen, onClose, children }) => {
     };
   }, [isOpen, onClose]);
 
-  if (!isOpen) {
-    return null;
-  }
+  if (!isOpen) return null;
 
   const handleBackdropClick = (event) => {
     if (event.target.classList.contains("modal-backdrop")) {
@@ -31,17 +29,13 @@ const Modal = ({ isOpen, onClose, children }) => {
     }
   };
 
-  const handleCloseClick = () => {
-    onClose();
-  };
-
-  return (
+  return createPortal(
     <div className="modal-backdrop" onClick={handleBackdropClick}>
       <div className="modal-container">
-
         <button
           className="modal-close"
-          onClick={handleCloseClick}
+          type="button"
+          onClick={onClose}
           aria-label="Close modal"
         >
           ×
@@ -50,9 +44,9 @@ const Modal = ({ isOpen, onClose, children }) => {
         <div className="modal-content">
           {children}
         </div>
-
       </div>
-    </div>
+    </div>,
+    document.body
   );
 };
 
