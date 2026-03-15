@@ -1,7 +1,8 @@
-import navLinks from "../../assets/constants/navLinks";
-import siteConfig from "../../assets/constants/siteConfig";
-import Button from "../../ui/button/Button";
+import navLinks from "@/assets/constants/navLinks";
+import siteConfig from "@/assets/constants/siteConfig";
+import Button from "@/ui/button/Button";
 import "./footer.css";
+
 
 const Footer = ({ onQuoteClick }) => {
   const year = new Date().getFullYear();

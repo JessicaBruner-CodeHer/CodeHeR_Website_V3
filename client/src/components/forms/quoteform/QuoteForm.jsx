@@ -1,7 +1,8 @@
 import { useState } from "react";
-import Button from "../../../ui/button/Button";
-import siteConfig from "../../../assets/constants/siteConfig";
+import Button from "@/ui/button/Button";
+import siteConfig from "@/assets/constants/siteConfig";
 import "./quoteform.css";
+
 
 const initialFormState = {
   name: "",

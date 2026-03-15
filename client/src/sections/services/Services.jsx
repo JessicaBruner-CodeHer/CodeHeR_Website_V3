@@ -1,11 +1,12 @@
-import SectionContainer from "../../ui/sectioncontainer/SectionContainer";
-import SectionHeading from "../../ui/sectionheading/SectionHeading";
+import SectionContainer from "@/ui/sectioncontainer/SectionContainer";
+import SectionHeading from "@/ui/sectionheading/SectionHeading";
 
-import FlipCard from "../../ui/flipcard/FlipCard";
+import FlipCard from "@/ui/flipcard/FlipCard";
 
-import servicesData from "../../assets/constants/serviceData";
-import siteConfig from "../../assets/constants/siteConfig";
+import servicesData from "@/assets/constants/serviceData";
+import siteConfig from "@/assets/constants/siteConfig";
 import "./services.css";
+
 
 const Services = () => {
   const servicesSection = siteConfig.services;

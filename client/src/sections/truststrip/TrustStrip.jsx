@@ -1,6 +1,7 @@
-import SectionContainer from "../../ui/sectioncontainer/SectionContainer";
-import siteConfig from "../../assets/constants/siteConfig";
+import SectionContainer from "@/ui/sectioncontainer/SectionContainer";
+import siteConfig from "@/assets/constants/siteConfig";
 import "./truststrip.css";
+
 
 const TrustStrip = () => {
   const trust = siteConfig.truststrip;

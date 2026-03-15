@@ -1,8 +1,9 @@
 import { useState } from "react";
-import navLinks from "../../assets/constants/navLinks";
-import siteConfig from "../../assets/constants/siteConfig";
-import Button from "../../ui/button/Button";
-import "./navbar.css";
+import navLinks from "@/assets/constants/navLinks";
+import siteConfig from "@/assets/constants/siteConfig";
+import Button from "@/ui/button/Button";
+import "./footer.css";
+
 
 const Navbar = ({ onQuoteClick }) => {
   const [menuOpen, setMenuOpen] = useState(false);

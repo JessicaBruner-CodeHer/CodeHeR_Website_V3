@@ -1,7 +1,8 @@
-import SectionContainer from "../../ui/sectioncontainer/SectionContainer";
-import Button from "../../ui/button/Button";
-import siteConfig from "../../assets/constants/siteConfig";
+import SectionContainer from "@/ui/sectioncontainer/SectionContainer";
+import Button from "@/ui/button/Button";
+import siteConfig from "@/assets/constants/siteConfig";
 import "./hero.css";
+
 
 const Hero = ({ onQuoteClick }) => {
   const hero = siteConfig.hero;

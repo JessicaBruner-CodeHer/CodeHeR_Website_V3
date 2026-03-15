@@ -1,9 +1,10 @@
-import SectionContainer from "../../ui/sectioncontainer/SectionContainer";
-import SectionHeading from "../../ui/sectionheading/SectionHeading";
-import CapabilityCard from "../../ui/capabilitycard/CapabilityCard";
-import aboutCapabilities from "../../assets/constants/aboutCapabilities";
-import siteConfig from "../../assets/constants/siteConfig";
+import SectionContainer from "@/ui/sectioncontainer/SectionContainer";
+import SectionHeading from "@/ui/sectionheading/SectionHeading";
+import CapabilityCard from "@/ui/capabilitycard/CapabilityCard";
+import aboutCapabilities from "@/assets/constants/aboutCapabilities";
+import siteConfig from "@/assets/constants/siteConfig";
 import "./about.css";
+
 
 const About = () => {
   const about = siteConfig.about;
