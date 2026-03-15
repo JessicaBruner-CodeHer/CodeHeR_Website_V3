@@ -229,3 +229,9 @@ section {
     padding-bottom: var(--space-xl);
   }
 }
+html {
+  scroll-behavior: smooth;
+}
+section {
+  scroll-margin-top: var(--navbar-height);
+}
