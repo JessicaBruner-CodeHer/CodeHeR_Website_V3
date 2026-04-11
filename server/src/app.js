@@ -1,8 +1,13 @@
 import express from "express";
 import cors from "cors";
+import path from "path";
+import { fileURLToPath } from "url";
 import quoteRoutes from "./routes/quoteRoutes.js";
 
 const app = express();
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
 const allowedOrigins = [
   "http://localhost:5173",
@@ -35,5 +40,14 @@ app.get("/api/health", (req, res) => {
 });
 
 app.use("/api/quotes", quoteRoutes);
+
+// Serve React frontend in production
+if (process.env.NODE_ENV === "production") {
+  const clientDist = path.join(__dirname, "../../client/dist");
+  app.use(express.static(clientDist));
+  app.get("*", (req, res) => {
+    res.sendFile(path.join(clientDist, "index.html"));
+  });
+}
 
 export default app;

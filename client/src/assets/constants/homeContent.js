@@ -20,7 +20,7 @@ export const navbarContent = {
 };
 
 export const heroContent = {
-  eyebrow: "Modern web development for growing businesses",
+  eyebrow: "Smart Websites. Powerful Infrastructure. Built for Growth.",
   heading:
     "Professional websites designed to elevate your brand and support long-term growth.",
   description:
