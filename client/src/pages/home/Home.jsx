@@ -25,6 +25,7 @@ const Home = () => {
         <Hero onQuoteClick={openModal} />
         <TrustStrip />
         <Services />
+        
         <About />
         <ProjectCta onQuoteClick={openModal} />
       </main>

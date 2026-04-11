@@ -18,3 +18,9 @@
 .section-container--gradient {
   background: var(--gradient-surface);
 }
+.section-container {
+  position: relative;
+  width: 100%;
+  padding-top: 80px;
+  padding-bottom: 80px;
+}
